@@ -163,7 +163,7 @@ void *runThread(void *argv) {
 	float		*output1, *output2;
 	int		*num = (int *)argv;
 	int		g = *num;
-	printf("%s\n",galaxies[g].image);
+
 	//run transform
 	output1 = threadTransform(g);
 
@@ -705,9 +705,7 @@ void setupTransform(int argc, char *argv[]) {
     strcpy(galaxies[g].image, buffer1);
   }
   fclose(gallist_file);
-  for (g=0;g<ngalaxies;g++) {
-    printf("%s\n",galaxies[g].image);
-  }
+
   fprintf(stdout,"Read in %i galaxies.\n", ngalaxies);
 
   //parse config file for stamp addresses 
